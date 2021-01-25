@@ -1,23 +1,26 @@
-﻿using MelonLoader;
+using MelonLoader;
 using System;
-using System.Reflection;
-using System.IO;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using System.Collections;
-using UnhollowerRuntimeLib;
+using System.Collections.Generic;
 using System.Linq;
-using Harmony;
-using MelonLoader.Tomlyn;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
 
 namespace NoMicIcon
 {
-    public class MyMod : MelonMod
+    public static class BuildInfo
     {
-        public override void VRChat_OnUiManagerInit()
+        public const string Name = "NoMicIcon";
+        public const string Author = "Ogata#0001";
+        public const string Company = "null";
+        public const string Version = "1.0.0";
+        public const string DownloadLink = "https://github.com/ogatasaan";
+        public class NoMicIconOgata : MelonMod
         {
-            GameObject.DestroyImmediate(GameObject.Find("UserInterface/UnscaledUI/HudContent/Hud/VoiceDotParent"));
+            public override void VRChat_OnUiManagerInit()
+            {
+                GameObject.Find("UserInterface/UnscaledUI/HudContent/Hud/VoiceDotParent/VoiceDot").SetActive(false);
+            }
         }
     }
 }
