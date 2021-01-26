@@ -20,6 +20,7 @@ namespace NoMicIcon
             public override void VRChat_OnUiManagerInit()
             {
                 GameObject.Find("UserInterface/UnscaledUI/HudContent/Hud/VoiceDotParent/VoiceDot").SetActive(false);
+                GameObject.Find("UserInterface/UnscaledUI/HudContent/Hud/VoiceDotParent/VoiceDotDisabled").GetComponent<FadeCycleEffect>().enabled = false;
             }
         }
     }
